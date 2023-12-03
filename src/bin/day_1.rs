@@ -37,7 +37,7 @@ fn parse_first_last_digit<S: AsRef<str>>(l: S) -> usize {
     let digits = l
         .as_ref()
         .chars()
-        .filter(|c| c.is_digit(10))
+        .filter(char::is_ascii_digit)
         .collect::<Vec<_>>();
     let mut s = String::new();
     s.push(*digits.first().unwrap());
